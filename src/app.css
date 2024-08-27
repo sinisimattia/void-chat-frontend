@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'SpaceMono';
+        font-style: normal;
+        font-weight: normal;
+        font-display: swap;
+        src: url(/fonts/SpaceMono-Regular.ttf);
+    }
+}
+
+@layer components {
+    .border,
+    .border-2,
+    .border-4,
+    .border-r,
+    .border-l,
+    .border-t,
+    .border-b,
+    .border-x,
+    .border-y {
+        @apply border-foreground;
+    }
+}
+
+html {
+    box-sizing: border-box !important;
+}
+
+::-webkit-scrollbar {
+    @apply cursor-auto;
+}
+
+::-webkit-scrollbar-track {
+    @apply border-none bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-foreground;
+}
+
+.crt {
+    background: linear-gradient(to top, #000000, #000000, #202020, #202020);
+    background-size: cover;
+    background-size: 100% 1px;
+    text-shadow: rgba(255, 255, 255, .3) 0 2px 5px !important;
+}
+
+.crt [class*=border], .crt ::-webkit-scrollbar-thumb {
+    box-shadow: rgba(255, 255, 255, .3) 0 2px 5px !important;
+}
+
+.crt [class*=accent] {
+    text-shadow: orange 0 2px 5px !important;
+}
+
+.crt [class*=accent] [class*=border] {
+    box-shadow: orange 0 2px 5px !important;
+}
